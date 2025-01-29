@@ -1,0 +1,49 @@
+Term: 11
+
+Create a base class containing data members Roll no., Name and display using Single Inheritance containing marks of 2 subjects and Total.
+Program:
+#include<iostream.h>
+class Student
+{
+	public:
+	int Roll;
+	char Name[50];
+	void read()
+	{
+		cout<<"Enter Roll no. and Name: ";
+		cin>>Roll>>Name;
+	}
+	void display()
+	{
+		cout<<"Roll no. : "<<Roll<<endl;
+		cout<<"Name : "<<Name<<endl;
+	}
+};
+class Marks:Student
+{
+	public:
+	int m1,m2,Total;
+	void read1()
+	{
+		cout<<"Enter marks of two Subjects: ";
+		cin>>m1>>m2;
+		Total=m1+m2;
+	}
+	void display1()
+	{
+		cout<<"Total is: "<<Total<<endl;
+	}
+};
+main()
+{
+	Student s;
+	Marks m;
+	s.read();
+	m.read1();
+	s.display();
+	m.display1();
+}	`	
+
+
+
+

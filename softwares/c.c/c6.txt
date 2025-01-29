@@ -1,0 +1,45 @@
+            Term: 06
+Write a C++ program to find Simple Interest using Class and Object.
+1)	Data Members: Principle Amount, Time, Rate of Interest.
+2)	Create a function to find Simple Interest.
+Program:
+#include<iostream.h>
+#include<iomanip.h>
+class Simple_Interest
+{
+	public:
+	int p,t,r,SI;
+	void get_data();
+	void computeSI();
+};
+void Simple_Interest::get_data()
+{
+    cout<<"Enter Principle Amount: ";
+	cin>>p;
+	cout<<"Enter Time: ";
+	cin>>t;
+	cout<<"Enter Rate of Interest: ";
+	cin>>r;
+}
+void Simple_Interest::computeSI()
+{
+    SI=(p*t*r)/100;
+	cout<<"Simple Interest is: "<<SI<<endl;	
+}
+int main()
+{
+	Simple_Interest obj;
+	obj.get_data();
+	obj.computeSI();
+}
+
+
+
+
+
+
+
+
+
+
+

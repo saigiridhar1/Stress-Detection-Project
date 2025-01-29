@@ -1,0 +1,143 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\widctlpar\sa200\sl276\slmult1\f0\fs22                                                     Term No.: 04\par
+=============================================================================================================================\par
+Q) Create a database of Bank_Transactions\par
+\par
+Step 1: Create table branch\par
+                1)Branch_id\par
+                2)Branch_name\par
+                3)Location\par
+Step 2: Create table customer\par
+                1)Branch_id\par
+                2)Cust_acc_no\par
+                3)Address\par
+                4)Balance\par
+Step 3: Create tables using PRIMARY KEY and FOREIGN KEY\par
+Step 4: Demonstrate like operator (display all customers where name of customer starts with A and P)\par
+Step 5: Update balance of any customer\par
+Step 6: Demostrate table joins\par
+Step 7: Delete one row from branch.\par
+=============================================================================================================================\par
+Program:\par
+Step 1: \par
+mysql> create table branch\par
+    -> (\par
+    -> Branch_ID int,\par
+    -> Branch_Name varchar(50),\par
+    -> Branch_Location varchar(50),\par
+    -> PRIMARY KEY(Branch_ID)\par
+    -> );\par
+Query OK, 0 rows affected (0.08 sec)\par
+\par
+Step 2:\par
+mysql> create table customer\par
+    -> (\par
+    -> Branch_ID int,\par
+    -> Cust_acc_no int,\par
+    -> Address varchar(50),\par
+    -> Balance int,\par
+    -> FOREIGN KEY (Branch_ID) references branch(Branch_ID)\par
+    -> );\par
+Query OK, 0 rows affected (0.03 sec)\par
+\par
+Step 4:\par
+mysql> select*from customer where address like 'a%';\par
++-----------+-------------+------------+---------+\par
+| Branch_ID | Cust_acc_no | Address    | Balance |\par
++-----------+-------------+------------+---------+\par
+|         3 |         125 | Azam Nagar |  468765 |\par
++-----------+-------------+------------+---------+\par
+1 row in set (0.00 sec)\par
+\par
+Step 5:\par
+mysql> update customer set Balance="200067" where Branch_ID="02";\par
+Query OK, 1 row affected (0.04 sec)\par
+Rows matched: 1  Changed: 1  Warnings: 0\par
+\par
+mysql> select*from customer;\par
++-----------+-------------+----------------+---------+\par
+| Branch_ID | Cust_acc_no | Address        | Balance |\par
++-----------+-------------+----------------+---------+\par
+|         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         3 |         125 | Azam Nagar     |  468765 |\par
+|         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         5 |         127 | Ram Nagar      | 4623233 |\par
++-----------+-------------+----------------+---------+\par
+\par
+Step 6:\par
+Cross Join-\par
+mysql> select*from branch cross join customer;\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+| Branch_ID | Branch_Name     | Branch_Location | Branch_ID | Cust_acc_no | Address        | Balance |\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+|         1 | Camp Branch     | Camp            |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         1 | Camp Branch     | Camp            |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         1 | Camp Branch     | Camp            |         3 |         125 | Azam Nagar     |  468765 |\par
+|         1 | Camp Branch     | Camp            |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         1 | Camp Branch     | Camp            |         5 |         127 | Ram Nagar      | 4623233 |\par
+|         2 | Khanapur Branch | Khanapur        |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         2 | Khanapur Branch | Khanapur        |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         2 | Khanapur Branch | Khanapur        |         3 |         125 | Azam Nagar     |  468765 |\par
+|         2 | Khanapur Branch | Khanapur        |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         2 | Khanapur Branch | Khanapur        |         5 |         127 | Ram Nagar      | 4623233 |\par
+|         3 | Londa Branch    | Londa           |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         3 | Londa Branch    | Londa           |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         3 | Londa Branch    | Londa           |         3 |         125 | Azam Nagar     |  468765 |\par
+|         3 | Londa Branch    | Londa           |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         3 | Londa Branch    | Londa           |         5 |         127 | Ram Nagar      | 4623233 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         3 |         125 | Azam Nagar     |  468765 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         5 |         127 | Ram Nagar      | 4623233 |\par
+|         5 | Goa Branch      | Baga            |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         5 | Goa Branch      | Baga            |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         5 | Goa Branch      | Baga            |         3 |         125 | Azam Nagar     |  468765 |\par
+|         5 | Goa Branch      | Baga            |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         5 | Goa Branch      | Baga            |         5 |         127 | Ram Nagar      | 4623233 |\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+25 rows in set (0.00 sec)\par
+\par
+Right Join-\par
+mysql> select*from  branch b right join customer c on b.branch_ID=c.branch_id;\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+| Branch_ID | Branch_Name     | Branch_Location | Branch_ID | Cust_acc_no | Address        | Balance |\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+|         1 | Camp Branch     | Camp            |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         2 | Khanapur Branch | Khanapur        |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         3 | Londa Branch    | Londa           |         3 |         125 | Azam Nagar     |  468765 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         5 | Goa Branch      | Baga            |         5 |         127 | Ram Nagar      | 4623233 |\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+5 rows in set (0.01 sec)\par
+\par
+Left Join-\par
+mysql> select*from  branch b left join customer c on b.branch_ID=c.branch_id;\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+| Branch_ID | Branch_Name     | Branch_Location | Branch_ID | Cust_acc_no | Address        | Balance |\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+|         1 | Camp Branch     | Camp            |         1 |         123 | Vaibhav Nagar  |  526907 |\par
+|         2 | Khanapur Branch | Khanapur        |         2 |         124 | Hanuman Nagar  |  200067 |\par
+|         3 | Londa Branch    | Londa           |         3 |         125 | Azam Nagar     |  468765 |\par
+|         4 | Ramnagar Branch | Ramnagar        |         4 |         126 | Sadashiv Nagar |  463733 |\par
+|         5 | Goa Branch      | Baga            |         5 |         127 | Ram Nagar      | 4623233 |\par
++-----------+-----------------+-----------------+-----------+-------------+----------------+---------+\par
+5 rows in set (0.00 sec)\par
+\par
+Step 7:\par
+mysql> select*from branch;\par
++-----------+-----------------+-----------------+\par
+| Branch_ID | Branch_Name     | Branch_Location |\par
++-----------+-----------------+-----------------+\par
+|         1 | Camp Branch     | Camp            |\par
+|         2 | Khanapur Branch | Khanapur        |\par
+|         3 | Londa Branch    | Londa           |\par
+|         5 | Goa Branch      | Baga            |\par
++-----------+-----------------+-----------------+\par
+4 rows in set (0.00 sec)\par
+
+\pard\sa200\sl276\slmult1\f1\lang9\par
+}
+ 

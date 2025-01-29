@@ -1,0 +1,63 @@
+Term: 13
+
+Program to perform Push operation on stack.
+Program:
+#include<iostream.h>
+#include<ctype.h>
+#define MAX 10
+class Stack
+{
+	private:
+			int arr[MAX];
+			int top;
+	public:
+			Stack()
+			{
+				top= -1;
+			}
+		int Push(int item)
+			{
+				if(top == MAX-1)
+				{
+					cout<<endl<<"Stack is full"<<endl;
+					return 0;
+				}
+				top++;
+				arr[top]=item;
+				cout<<item<<"is pushed"<<endl;
+			}
+		int print()
+			{
+				if(top !=-1)
+				{
+				cout<<"\tstack contains";
+				for(int c=0; c<=top; c++)
+					cout<<arr[c]<<" ";
+				cout<<endl;
+				}
+				else
+					cout<<"Stack is empty"<<endl;
+			}
+			};
+		int main()
+			{
+				Stack s;
+				char choice;
+				int itm;
+				s.print();
+				cout<<"Do you want to push an item(Y/N)?";
+				cin>>choice;
+				while(toupper(choice) == 'Y')
+				{
+					cout<<"Enter the item: ";
+					cin>>itm;
+					s.print();
+					cout<<"Do you want to push another item(Y/N)?";
+					cin>>choice;
+				}
+			}
+			
+
+
+
+

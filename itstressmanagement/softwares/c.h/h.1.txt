@@ -1,0 +1,181 @@
+                                                                      Term: 14
+Program to perform Pop operation on stack.
+Program:
+#include<iostream.h>
+#include<ctype.h>
+#define MAX 10
+class Stack
+{
+	private:
+	int arr[MAX];
+	int top;
+	public:
+	Stack()
+	{
+		top=-1;
+	}
+	int Push (int item)
+	{
+		if(top==MAX-1)
+		{
+			cout<<endl<<"Stack is full"<<endl;
+			return 0;
+		}
+		top++;
+		arr[top]=item;
+		cout<<item<<" is pushed"<<endl;
+	}
+    int print()
+	{
+		if(top!=-1)
+		{
+			cout<<"\t Stack contains ";
+			for(int c=0;c<=top;c++)
+			cout<<endl;
+		}
+		else cout<<"Stack is empty"<<endl;
+	}
+	int Pop()
+	{
+		if (top==-1)
+		{
+			cout<<endl<<"Stack is empty"<<endl;
+			return 0;
+		}
+		else
+		{
+			int data=arr[top];
+			top-1;
+			cout<<data<<" is Popped"<<endl;
+		}
+	}
+};
+int main()
+{
+	Stack s;
+	s.print();
+	s.Push(100);
+	s.print();
+	s.Push(200);
+	s.print();
+	s.Push(300);
+	s.Pop();
+	s.print();
+	s.Pop();
+	s.print();
+	s.Pop();
+	s.print();
+}
+Design Your Time-Table in HTML Web Page.
+Program:
+<html>
+<title>Time-Table</title>
+<h1 style="color:Yellow"><center>College Time-Table</center></h1>
+<body bgcolor="skyblue">
+<table border=1 align="center" cellspacing=3>
+
+<tr>
+<td align="center"></td>
+<td align="center"> 08:00-09:00 </td>
+<td align="center"> 09:00-10:00 </td>
+<td align="center"> 10:00-11:00 </td>
+<td align="center"> 11:00-12:00 </td>
+<td align="center"> 12:00-12:30 </td>
+<td align="center"> 12:30-01:30 </td>
+<td align="center"> 01:30-02:30 </td>
+<td align="center"> 02:30-03:30 </td>
+<td align="center"> 03:30-04:30 </td>
+</tr>
+
+<tr>
+<td><b>MONDAY</b></td>
+<td><font color="White"> Physics </font></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="Blue"> English </font></td>
+<td><font color="Orange"> Hindi </font></td>
+
+<td rowspan="6" align="center">
+L<br><br>U<br><br>N<br><br>C<br><br>H
+</td>
+
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="Purple"> Chemistry </font></td>
+<td><font color="Red">Councelling</font></td>
+</tr>
+
+
+
+<tr>
+<td><b>TUESDAY</b></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="White "> Physics </font></td>
+<td><font color="Orange"> Hindi </font></td>
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Purple"> Chemistry </font></td>
+<td><font color="Blue"> English </font></td>
+<td><font color="White"> Physics </font></td>
+<td><font color="Brown"> Library </font></td>
+</tr>
+
+
+<tr>
+<td><b>WEDNESDAY</b></td>
+<td><font color="White "> Physics </font></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="Purple"> Chemistry </font></td>
+<td><font color="Blue"> English </font></td>
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Orange"> Hindi </font></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="Grey">Lan Gaming </font></td>
+</tr>
+
+
+<tr>
+<td><b>THURSDAY</b></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="White "> Physics </font></td>
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Orange"> Hindi </font></td>
+<td><font color="Purple"> Chemistry </font></td>
+<td><font color="Blue"> English </font></td>
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Brown"> Library </font></td>
+</tr>
+
+
+<tr>
+<td><b>FRIDAY</b></td>
+<td><font color="White "> Physics </font></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="Blue"> English </font></td>
+<td><font color="Purple"> Chemistry </font></td>
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Orange"> Hindi </font></td>
+<td><font color="White "> Physics </font></td>
+<td><font color="Grey">Lan Gaming </font></td>
+</tr>
+
+
+<tr>
+<td><b>SATURDAY</b></td>
+<td><font color="Green"> Maths </font></td>
+<td><font color="White "> Physics </font></td>
+<td><font color="Blue"> English </font></td>
+<td><font color="Magenta"> Computer Science </font></td>
+<td><font color="Red">Councelling</font></td>
+</tr>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+

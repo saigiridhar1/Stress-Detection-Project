@@ -1,0 +1,72 @@
+                                                                      Term: 14
+Program to perform Pop operation on stack.
+Program:
+#include<iostream.h>
+#include<ctype.h>
+#define MAX 10
+class Stack
+{
+	private:
+	int arr[MAX];
+	int top;
+	public:
+	Stack()
+	{
+		top=-1;
+	}
+	int Push (int item)
+	{
+		if(top==MAX-1)
+		{
+			cout<<endl<<"Stack is full"<<endl;
+			return 0;
+		}
+		top++;
+		arr[top]=item;
+		cout<<item<<" is pushed"<<endl;
+	}
+    int print()
+	{
+		if(top!=-1)
+		{
+			cout<<"\t Stack contains ";
+			for(int c=0;c<=top;c++)
+			cout<<endl;
+		}
+		else cout<<"Stack is empty"<<endl;
+	}
+	int Pop()
+	{
+		if (top==-1)
+		{
+			cout<<endl<<"Stack is empty"<<endl;
+			return 0;
+		}
+		else
+		{
+			int data=arr[top];
+			top-1;
+			cout<<data<<" is Popped"<<endl;
+		}
+	}
+};
+int main()
+{
+	Stack s;
+	s.print();
+	s.Push(100);
+	s.print();
+	s.Push(200);
+	s.print();
+	s.Push(300);
+	s.Pop();
+	s.print();
+	s.Pop();
+	s.print();
+	s.Pop();
+	s.print();
+}
+
+
+
+

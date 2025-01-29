@@ -1,0 +1,44 @@
+Term: 10
+C++ program to find sum of series 1+x+x2 +… xn using copy constructor.
+Program:
+#include<iostream.h>
+class Copy
+{
+	public:
+	int x,n;
+	int calculate();
+	Copy(int xx,int nn)
+	{
+		x=xx;
+		n=nn;
+	}
+};
+int Copy::calculate()
+{
+	int nextterm;
+	int sum=1;
+	nextterm=x;
+	for(int i=1; i<=n; i++)
+	{
+		sum=sum+nextterm;
+		nextterm=nextterm*x;
+	}
+	return sum;
+}
+main()
+{
+	int n,x;
+	cout<<"Enter Base and Exponent(x&n): ";
+	cin>>x>>n;
+	Copy obj(x,n);
+	Copy cpy=obj;
+	cout<<"Sum of Series: "<<obj.calculate()<<endl;
+	cout<<"Sum of Series: "<<cpy.calculate()<<endl;
+}
+
+
+
+
+
+
+

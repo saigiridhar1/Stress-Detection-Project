@@ -1,0 +1,73 @@
+Term: 04
+	                                                
+Program to sort array in ascending order.
+Program:
+#include<iostream.h>
+#include<iomanip.h>
+class Sorting
+{
+	public:
+	int m[100],n,i;
+	void get_data();
+	void sort();
+	void display();
+};
+void Sorting::get_data()
+{
+	cout<<"How many Numbers?"<<endl;
+	cin>>n;
+	cout<<"Please Enter the Numbers: "<<endl;
+	for(i=0;i<n;i++)
+	{
+		cin>>m[i];
+	}
+}
+void Sorting::sort()
+{
+	int temp,j;
+	for(i=1;i<n;i++)
+	{
+		j=i;
+		while(j>=1)
+		{
+			if(m[j]<m[j-1])
+			{
+				temp=m[j];
+				m[j]=m[j-1];
+				m[j-1]=temp;
+			}
+			j--;
+		}
+	}
+}
+void Sorting::display()
+{
+	cout<<"Array after Sorting is: "<<endl;
+	for(i=0;i<n;i++)
+	{
+		cout<<setw(4)<<m[i]<<endl;
+	}
+}
+int main()
+{
+	Sorting s1;
+	s1.get_data();
+	s1.sort();
+	s1.display();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

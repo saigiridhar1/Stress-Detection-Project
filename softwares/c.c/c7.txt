@@ -1,0 +1,71 @@
+                                                                    Term: 07
+Program to create Class with data members a, b, c and member functions to input data, compute discriminant based on following conditions and print their Roots.
+1)	If discriminant = 0, print roots are real and equal.
+2)	If discriminant is > 0, print roots are real.
+3)	If discriminant < 0, print roots are imaginary.
+Logic:
+ax+by+c=0 
+d=(b*b)-(4*a*c)
+If d=0                                                                                                                                                                                      roots are equal                                                                                                                                                             r=(-b-(sqrt(d))/2*a);
+If (d>0)                                                                                                                                                                         roots are real r1=(-b+(sqrt(d))/2*a)                                                                                                                                                           r2=(-b-(sqrt(d))/2*a)
+
+
+
+
+
+
+
+
+
+
+
+Program:
+#include<iostream.h>
+#include<iomanip.h>
+#include<conio.h>
+#include<math.h>
+classQuadratic_Equation
+{
+	public:
+	int a,b,c,r1,r2,d;
+	voidgetdata();
+	void compute();
+	void display();
+};
+voidQuadratic_Equation::getdata()
+{
+	cout<<"Enter co-efficients for Equation: ";
+	cin>>a,b,c;
+}
+voidQuadratic_Equation::compute()
+{
+	d=b*b-4*a*c;
+	if(d==0)
+	{
+		cout<<"Roots are Equal"<<endl;
+		r1=(-b-sqrt(d)/2*a);
+		r1=r2;
+	}
+	else
+	if(d>0)
+	{
+		cout<<"Roots are Positive and Different(real)"<<endl;
+		r1=(-b+sqrt(d)/2*a);
+		r2=(-b-sqrt(d)/2*a);
+	}
+	else
+	{
+		cout<<"Roots are Immaginary"<<endl;
+	}
+}
+voidQuadratic_Equation::display()
+{
+	cout<<"Root 1 = "<<r1<<endl;
+	cout<<"Root 2 = "<<r2<<endl;
+}
+int main()
+{
+	Quadratic_Equationobj;
+	obj.getdata();
+	obj.compute();
+	obj.display();}

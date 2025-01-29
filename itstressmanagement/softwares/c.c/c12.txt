@@ -1,0 +1,50 @@
+
+Term: 12
+
+C++ program to create a class containing following data members
+1)	Reg_no
+2)	Name
+3)	Fees
+Create a member function to read and display data using concept of pointers to object
+Program:
+#include<iostream.h>
+class Student
+{
+	public:
+	int Reg_no;
+	char Name[30];
+	float Fees;
+	void read();
+	void display();
+};
+void Student::read()
+{
+	cout<<"Enter Registration No. : ";
+	cin>>Reg_no;
+	cout<<"Enter Name : ";
+	cin>>Name;
+	cout<<"Enter Fees : ";
+	cin>>Fees;
+}
+void Student::display()
+{
+	cout<<"Registration No. of Student Is : "<<Reg_no<<endl;
+	cout<<"Name of Student Is : "<<Name<<endl;
+	cout<<"Fees paid by Student Is : "<<Fees<<endl;
+}
+main()
+{
+	Student s, *p;
+	p=&s;
+	p->read();
+	p->display();
+}
+
+
+
+
+
+
+
+
+

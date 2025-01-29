@@ -1,0 +1,67 @@
+Term: 15
+Program:
+#include<iostream.h>
+#include<iomanip.h>
+#define QUEUE_SIZE 100
+class Queue
+{
+	private:
+	int q[QUEUE_SIZE];
+	int first,last;
+	int count;
+	public:
+	Queue();
+	void enqueue(int x);
+	int dequeue();
+	void getSize();
+};
+Queue::Queue()
+{
+	first=0;
+	last=QUEUE_SIZE -1;
+	count=0;
+}
+void Queue::enqueue(int x)
+{
+	last=(last=1)% QUEUE_SIZE;
+	q[last]=x;
+	cout<<x<<" is inserted"<<endl;
+	count++;
+}
+int Queue::dequeue()
+{
+	int x = q[first];
+	first = (first + 1)% QUEUE_SIZE;
+	count--;
+	cout<<x<<" is deleted"<<endl;
+	return x;
+}
+void Queue::getSize()
+{
+	if (count>0)
+	{
+		cout<<"Queue contains ";
+		for(int i=first; i<=last;i++)
+		cout<<q[i]<<" ";	
+	}
+	else
+	cout<<"Queue is empty"<<endl;
+}
+int main()
+{
+	Queue q;
+	q.enqueue(10);
+	q.getSize();
+	q.enqueue(20);
+	q.getSize();
+	q.enqueue(30);
+	q.getSize();
+}
+
+
+
+
+
+
+
+

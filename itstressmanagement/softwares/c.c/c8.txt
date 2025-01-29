@@ -1,0 +1,18 @@
+                                                                 Term: 08
+Program to find cube of a number.
+Program:
+#include<iostream.h>
+inline int cube(int a)
+{
+	return(a*a*a);
+}
+main()
+{
+	int x,y;
+	cout<<"Enter a Number: ";
+	cin>>x;
+	y=cube(x);
+	cout<<"Cube of Number is: "<<y<<endl;
+}
+
+

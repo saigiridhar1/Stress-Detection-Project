@@ -1,0 +1,30 @@
+C++
+Sr.No.Program Name Date Remarks
+1.Program to count Frequency of presence of element In an Array.
+		
+2.Program to insert an element in an array at a given Position.
+		
+3.Program to delete an element from a given position in an Array.
+		
+4.Program to sort array in ascending order.
+		
+5.Program to search an element from the array using Binary search.
+		
+6.Program to create a class (Simple Interest).
+		
+7.Program to find roots of a quadratic equation.
+		
+8.Program to find cube of a number.
+		
+9.Program to find area of Square, Rectangle and Triangle using function overloading.		
+10.Program to find sum of series.	
+11.Program for single inheritance.		
+12.Program for pointer to object.		
+13.Program to perform Push operation on stack.
+		
+14.Program to perform Pop operation on stack.
+		
+15.Program to perform Queue.
+		
+16.Program to perform operations on Linked list.	17-12-2019	
+

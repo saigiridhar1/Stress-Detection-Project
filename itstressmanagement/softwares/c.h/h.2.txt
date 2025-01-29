@@ -1,0 +1,72 @@
+Design a HTML page to create a student registration form.
+Program:
+<html>
+<title> Registration </title>
+<h1 style="color:green"><center> STUDENT REGISTRATION </center></h1>
+<body bgcolor="Cyan">
+<table border=0 align="center">
+
+<tr>
+<td> Name </td>
+<td><Input Type="text"></td>
+</tr>
+
+<tr>
+<td> Address </td>
+<td><text area></text area></td>
+</tr>
+
+<tr>
+<td> Email </td>
+<td><input type="Email"></td>
+</tr>
+
+<tr>
+<td> Date of Birth </td>
+<td><input type="Date"></td>
+</tr>
+
+<tr>
+<td> Course </td>
+<td>
+Science<input type="checkbox">
+Commerce<input type="checkbox">
+</td>
+</tr>
+
+<tr>
+<td> Contact </td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td> Area of Interest </td>
+<td>
+<select>
+<option>Sports </option>
+<option>Computer </option>
+<option>Litrature</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><button>Register</button></td>
+</tr>
+
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

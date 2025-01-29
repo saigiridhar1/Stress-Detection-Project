@@ -1,0 +1,280 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\widctlpar\sa200\sl276\slmult1\f0\fs22\par
+                                                 Term No.: 03\par
+=============================================================================================================================\par
+Q) Program to create database of Students containing sub marks.\par
+\par
+Step 1: Create database denzel_student.\par
+Step 2: Create table student containing\par
+                 1) id int\par
+                 2) name varchar\par
+                 3) sub1_marks int\par
+                 4) sub2_marks int\par
+                 5) sub3_marks int\par
+                 6) sub4_marks int\par
+Step 3: Add 10 records\par
+Step 4: Display description of table\par
+Step 5: Display students failed in sub2 and sub3\par
+Step 6: List contains of table\par
+Step 7: Retrieve only names of all students\par
+Step 8: List students who passed in sub1\par
+Step 9: Count number of students passed in all subjects\par
+Step 10: Find sum of all Students\par
+Step 11: Find max marks in sub4\par
+Step 12: Update marks of "Raju" in sub2 as 89\par
+Step 13: Delete a Record of one Student\par
+=============================================================================================================================\par
+Step 1:\par
+mysql> create database denzel_student;\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+Step 2:\par
+mysql> create table student\par
+    -> (\par
+    -> ID int,\par
+    -> Name varchar(50),\par
+    -> sub1_marks int,\par
+    -> sub2_marks int,\par
+    -> sub3_marks int,\par
+    -> sub4_marks int,\par
+    -> PRIMARY KEY(ID)\par
+    -> );\par
+Query OK, 0 rows affected (0.03 sec)\par
+\par
+Step 3:\par
+mysql> insert into student values(01,'Denzel',91,82,78,69);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(02,'Rio',34,41,96,27);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(03,'Kim',17,32,07,40);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(04,'Raju',81,86,65,91);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(05,'Bheem',91,56,86,48);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(06,'Aditya',16,38,23,11);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(07,'Kartik',32,41,14,21);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(08,'Anu',61,21,53,43);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(09,'Sushmita',12,08,30,24);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> insert into student values(10,'Nida',92,72,80,98);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+Step 4:\par
+mysql> desc student;\par
++------------+-------------+------+-----+---------+-------+\par
+| Field      | Type        | Null | Key | Default | Extra |\par
++------------+-------------+------+-----+---------+-------+\par
+| ID         | int(11)     | NO   | PRI | NULL    |       |\par
+| Name       | varchar(50) | YES  |     | NULL    |       |\par
+| sub1_marks | int(11)     | YES  |     | NULL    |       |\par
+| sub2_marks | int(11)     | YES  |     | NULL    |       |\par
+| sub3_marks | int(11)     | YES  |     | NULL    |       |\par
+| sub4_marks | int(11)     | YES  |     | NULL    |       |\par
++------------+-------------+------+-----+---------+-------+\par
+6 rows in set (0.16 sec)\par
+\par
+Step 5:\par
+mysql> select*from student where sub2_marks<35;\par
++----+----------+------------+------------+------------+------------+\par
+| ID | Name     | sub1_marks | sub2_marks | sub3_marks | sub4_marks |\par
++----+----------+------------+------------+------------+------------+\par
+|  3 | Kim      |         17 |         32 |          7 |         40 |\par
+|  8 | Anu      |         61 |         21 |         53 |         43 |\par
+|  9 | Sushmita |         12 |          8 |         30 |         24 |\par
++----+----------+------------+------------+------------+------------+\par
+3 rows in set (0.04 sec)\par
+\par
+mysql> select*from student where sub3_marks<35;\par
++----+----------+------------+------------+------------+------------+\par
+| ID | Name     | sub1_marks | sub2_marks | sub3_marks | sub4_marks |\par
++----+----------+------------+------------+------------+------------+\par
+|  3 | Kim      |         17 |         32 |          7 |         40 |\par
+|  6 | Aditya   |         16 |         38 |         23 |         11 |\par
+|  7 | Kartik   |         32 |         41 |         14 |         21 |\par
+|  9 | Sushmita |         12 |          8 |         30 |         24 |\par
++----+----------+------------+------------+------------+------------+\par
+4 rows in set (0.00 sec)\par
+\par
+Step 6:\par
+mysql> select*from student;\par
++----+----------+------------+------------+------------+------------+\par
+| ID | Name     | sub1_marks | sub2_marks | sub3_marks | sub4_marks |\par
++----+----------+------------+------------+------------+------------+\par
+|  1 | Denzel   |         91 |         82 |         78 |         69 |\par
+|  2 | Rio      |         34 |         41 |         96 |         27 |\par
+|  3 | Kim      |         17 |         32 |          7 |         40 |\par
+|  4 | Raju     |         81 |         86 |         65 |         91 |\par
+|  5 | Bheem    |         91 |         56 |         86 |         48 |\par
+|  6 | Aditya   |         16 |         38 |         23 |         11 |\par
+|  7 | Kartik   |         32 |         41 |         14 |         21 |\par
+|  8 | Anu      |         61 |         21 |         53 |         43 |\par
+|  9 | Sushmita |         12 |          8 |         30 |         24 |\par
+| 10 | Nida     |         92 |         72 |         80 |         98 |\par
++----+----------+------------+------------+------------+------------+\par
+10 rows in set (0.00 sec)\par
+\par
+Step 7:\par
+mysql> select name from student;\par
++----------+\par
+| name     |\par
++----------+\par
+| Denzel   |\par
+| Rio      |\par
+| Kim      |\par
+| Raju     |\par
+| Bheem    |\par
+| Aditya   |\par
+| Kartik   |\par
+| Anu      |\par
+| Sushmita |\par
+| Nida     |\par
++----------+\par
+10 rows in set (0.00 sec)\par
+\par
+Step 8:\par
+mysql> select*from student where sub1_marks>35;\par
++----+--------+------------+------------+------------+------------+\par
+| ID | Name   | sub1_marks | sub2_marks | sub3_marks | sub4_marks |\par
++----+--------+------------+------------+------------+------------+\par
+|  1 | Denzel |         91 |         82 |         78 |         69 |\par
+|  4 | Raju   |         81 |         86 |         65 |         91 |\par
+|  5 | Bheem  |         91 |         56 |         86 |         48 |\par
+|  8 | Anu    |         61 |         21 |         53 |         43 |\par
+| 10 | Nida   |         92 |         72 |         80 |         98 |\par
++----+--------+------------+------------+------------+------------+\par
+5 rows in set (0.00 sec)\par
+\par
+Step 9:\par
+mysql> select count(*)from student where sub1_marks>35;\par
++----------+\par
+| count(*) |\par
++----------+\par
+|        5 |\par
++----------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select count(*)from student where sub2_marks>35;\par
++----------+\par
+| count(*) |\par
++----------+\par
+|        7 |\par
++----------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select count(*)from student where sub3_marks>35;\par
++----------+\par
+| count(*) |\par
++----------+\par
+|        6 |\par
++----------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select count(*)from student where sub4_marks>35;\par
++----------+\par
+| count(*) |\par
++----------+\par
+|        6 |\par
++----------+\par
+1 row in set (0.00 sec)\par
+\par
+Step 10:\par
+mysql> select sum(sub1_marks)from student;\par
++-----------------+\par
+| sum(sub1_marks) |\par
++-----------------+\par
+|             527 |\par
++-----------------+\par
+1 row in set (0.01 sec)\par
+\par
+mysql> select sum(sub2_marks)from student;\par
++-----------------+\par
+| sum(sub2_marks) |\par
++-----------------+\par
+|             477 |\par
++-----------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select sum(sub3_marks)from student;\par
++-----------------+\par
+| sum(sub3_marks) |\par
++-----------------+\par
+|             532 |\par
++-----------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select sum(sub4_marks)from student;\par
++-----------------+\par
+| sum(sub4_marks) |\par
++-----------------+\par
+|             472 |\par
++-----------------+\par
+1 row in set (0.00 sec)\par
+\par
+Step 11:\par
+mysql> select max(sub4_marks)from student;\par
++-----------------+\par
+| max(sub4_marks) |\par
++-----------------+\par
+|              98 |\par
++-----------------+\par
+1 row in set (0.00 sec)\par
+\par
+Step 12:\par
+mysql> update student set sub2_marks='89' where Name='Raju';\par
+Query OK, 1 row affected (0.05 sec)\par
+Rows matched: 1  Changed: 1  Warnings: 0\par
+\par
+mysql> select*from student;\par
++----+----------+------------+------------+------------+------------+\par
+| ID | Name     | sub1_marks | sub2_marks | sub3_marks | sub4_marks |\par
++----+----------+------------+------------+------------+------------+\par
+|  1 | Denzel   |         91 |         82 |         78 |         69 |\par
+|  2 | Rio      |         34 |         41 |         96 |         27 |\par
+|  3 | Kim      |         17 |         32 |          7 |         40 |\par
+|  4 | Raju     |         81 |         89 |         65 |         91 |\par
+|  5 | Bheem    |         91 |         56 |         86 |         48 |\par
+|  6 | Aditya   |         16 |         38 |         23 |         11 |\par
+|  7 | Kartik   |         32 |         41 |         14 |         21 |\par
+|  8 | Anu      |         61 |         21 |         53 |         43 |\par
+|  9 | Sushmita |         12 |          8 |         30 |         24 |\par
+| 10 | Nida     |         92 |         72 |         80 |         98 |\par
++----+----------+------------+------------+------------+------------+\par
+10 rows in set (0.00 sec)\par
+\par
+Step 13:\par
+mysql> delete from student where ID='07';\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> select*from student;\par
++----+----------+------------+------------+------------+------------+\par
+| ID | Name     | sub1_marks | sub2_marks | sub3_marks | sub4_marks |\par
++----+----------+------------+------------+------------+------------+\par
+|  1 | Denzel   |         91 |         82 |         78 |         69 |\par
+|  2 | Rio      |         34 |         41 |         96 |         27 |\par
+|  3 | Kim      |         17 |         32 |          7 |         40 |\par
+|  4 | Raju     |         81 |         89 |         65 |         91 |\par
+|  5 | Bheem    |         91 |         56 |         86 |         48 |\par
+|  6 | Aditya   |         16 |         38 |         23 |         11 |\par
+|  8 | Anu      |         61 |         21 |         53 |         43 |\par
+|  9 | Sushmita |         12 |          8 |         30 |         24 |\par
+| 10 | Nida     |         92 |         72 |         80 |         98 |\par
++----+----------+------------+------------+------------+------------+\par
+9 rows in set (0.00 sec)\par
+
+\pard\sa200\sl276\slmult1\f1\lang9\par
+}
+ 

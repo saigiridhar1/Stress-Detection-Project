@@ -1,0 +1,50 @@
+                                                                    Term: 01
+Roll No.:	                                                Date: 
+Program to count Frequency of presence of element In an Array.
+Program:
+#include<iostream.h>
+#include<iomanip.h>
+#include<conio.h>
+class Frequency 
+{
+	public:
+	int n, m[100],ele,freq;
+	void getdata();
+	void findfreq();
+	void display();
+};
+void Frequency :: getdata()
+{
+	int i;
+	cout<<"How many Elements "<<endl;
+	cin>>n;
+	cout<<"Enter Elements "<<endl;
+	for(i=0;i<n;i++)
+	{
+		cin>>m[i];
+	}
+	cout<<"Which Numbers' Frequency to Find "<<endl;
+	cin>>ele;
+}
+void Frequency :: findfreq()
+{
+	int i;
+	freq=0;
+	for(i=0;i<n;i++)
+	if(m[i]==ele)
+	freq++;
+}
+void Frequency :: display()
+{
+	if(freq>0)
+	cout<<"Frequency of Element is "<<ele<<" is "<<freq<<endl;
+	else
+	cout<<ele<<"Does not Exist";
+}
+ main()
+{
+	Frequency f;
+	f.getdata();
+	f.findfreq();
+	f.display();                                                                                                                                                          }
+
